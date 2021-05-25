@@ -1,5 +1,6 @@
 (function(window) {
   var client = new BinaryClient('wss://speechtotext.onrender.com');
+  // var client = new BinaryClient('ws://localhost:9001');
 
   client.on('open', function() {
     window.Stream = client.createStream();
@@ -56,4 +57,9 @@
       return buf.buffer
     }
   });
+
+  client.on('end', function(message){
+    console.log(message);
+    // document.getElementById('text').innerHTML = message;
+  })
 })(this);

@@ -38,6 +38,9 @@ const request = {
 };
 
 const client = new Speech.SpeechClient({keyFilename: 'cred.json'});
+
+let textRecognized = '';
+
 const recognizeStream = client
   .streamingRecognize(request)
   .on('error', console.error)
@@ -46,18 +49,22 @@ const recognizeStream = client
       //console.log(data.results[0]);
       if(data.results[0].isFinal){
         console.log(data.results[0].alternatives[0].transcript)
+        textWriter.write(data.results[0].alternatives[0].transcript + '\n')
+        // textRecognized += data.results[0].alternatives[0].transcript + '\n';
       }
     }
 });
 
+let textWriter = fs.createWriteStream('demo.txt');
+
 binaryServer.on('connection', function(client) {
   console.log('new connection');
 
-  var fileWriter = new wav.FileWriter(outFile, {
-    channels: 1,
-    sampleRate: 48000,
-    bitDepth: 16
-  });
+  // var fileWriter = new wav.FileWriter(outFile, {
+  //   channels: 1,
+  //   sampleRate: 48000,
+  //   bitDepth: 16
+  // });
 
   client.on('stream', function(stream, meta) {
     console.log('new stream');
@@ -65,8 +72,12 @@ binaryServer.on('connection', function(client) {
     // stream.pipe(fileWriter);
 
     stream.on('end', function() {
-      fileWriter.end();
+      //fileWriter.end();
       // console.log('wrote to file ' + outFile);
+      // client.emit('message', textRecognized)
+      textWriter.end();
+      const textReader = fs.createReadStream('demo.txt');
+      client.send(textReader);
     });
   });
 });
