@@ -44,9 +44,9 @@ const recognizeStream = client
   .on('data', data => {
     if (data.results && data.results[0]) {
       //console.log(data.results[0]);
-      // if(data.results[0].isFinal){
+      if(data.results[0].isFinal){
         console.log(data.results[0].alternatives[0].transcript)
-      // }
+      }
     }
 });
 
