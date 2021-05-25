@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "videorecorderextensionserver",
+  "private_key_id": "e025e13c284513d236a26276d012af298a91b3cc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEugIBADANBgkqhkiG9w0BAQEFAASCBKQwggSgAgEAAoIBAQDBCB72WhkBNbSv\nq7uPnqS7o0umDSSxoOOQkBBKMyQaVr3JmJ6e8Kx4Qqlm6mOQSnS6HclP62JqJRLy\nwDIGUIJqPh6uOGcVL5xwJ9SprzkH9OCzVWUPKqbToyJoc9gya/ODvKGGxlvoApHw\n5w4Lo7lHH7dQeaLTyCe57ncL4O5p+UW5hiyxXzrkpcmQtyS54pkRcskVcxE+D9bU\nxUZ9kMKJ8ykh4pGpWlSQ0O0e4yZgqrWJ30T+/qLm9BUuG/Ik3m1LJcaJ48HqlvNS\nddiDsv+NFYCDg5y4+cHfp5rRQEDaoZOLNKHUSOwaT5O9GGzjSUDUpOm0mYPV9jI4\nh9+voze/AgMBAAECggEAGwwnQn+nZ0r+MWtP0bT6AizEadUHojgYCuaU0cDOuz4S\nQ9A10bGJiSRWFkybfNlh9746ug8ScCsXt5oEqGvZikeABwtyLj7IndKG8uvRgvLm\nFVrO2Uwxqg/+v0IUNiR4L6pbu8XJlP3fMzE8/5aGXJfuGMGidihioKPwXGK9JW4A\nxuQjUgYdO2IEVIVrUE7lEDvC8yJv6wpH3vUEIuzVDyhPbEIanFbNhalyx0hp/83v\nWSEvsxhX3gZq5vlAqmGrovrPwsTz329h6VRnnejJ6kJM6uJRnKhEMSjxVdkuGcRS\nac4Gu7wWcEiE98Z41H6FDpW6HOEimTuEUVR6QjGlsQKBgQDvQPdIicBd+LaiQcpX\nBHgwU+prsi3qJytB9V4jm0qO4sYAMgcG1rcAnipIONzv6G0Lp5ExMrD8z08Ur1MC\nWpyVxel2miziMm4Xl+HtRq526z1vBaiSLMevwk+Bxdp6HQDqa964yYnTdAK0vP3P\n/etLkVwN7SFKKtG4V8Vf2TsNdwKBgQDOiu6Prl5nH/mIMiJqsezWi/F8ckHq3Enk\nJmHkhfjs7Yd3l3iNdXWj8ZCGYUsskSpP8vX9J1KOafyt08eGZSLCAjnsCOVT9Um+\nhWgKgh1u7X9wxalnvj1A/ixYFOOzbEv9yHwPS/UI3EzkWD2cOlQErR0uyCG8UhIB\nepgUxNGZ+QKBgDfYISAETytf/zkWRCVVfLxDCgeDOmZaKCWoIQYMnDWHxxGKm8tD\n2MlDIblj1GYHCVTcEu6510fbF6lLVwPIpJ3s6RZu3CUcAkhtgiWBBv3o4JkGaBde\nbmme4DH5PYqdNHaDISRenlYF0Q/gwRmIOiCUWDlD7S5Dmln92qsJqFf3AoGAGFev\nfiei4KyYEEE4ZTLLIw4jS/N7aV7FJqqPZwuTJvlnueSURLfPQZ861VuqLHp/biTI\ncSmtRTOgoCwRm/lXe14fzX3O6XJDWr0GYharuWMsXfIt4Rg+x+Ys+8SagY8F9ccn\nN/ZPzteICHGN8Ve+hz6P7e+Qak2R6bK1Md1whqECf3Tx9JXbnnk0BlBdLte8L3Kj\nD032vNPXSTEd8z4d/clMOC7yMj09rLmY2qHYYSJcy53t7jOD5UjAXBQltK9xZMJt\ngTQYa45bwvsf2WZsJgqPI5t5ZWVQLm1DvfdUoC0xpYJNDJMlMgBZk2ge9ytMdWHZ\nQTpEt7+U+yXQi2aY/Q4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "filesaccess@videorecorderextensionserver.iam.gserviceaccount.com",
+  "client_id": "106379258602327684650",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/filesaccess%40videorecorderextensionserver.iam.gserviceaccount.com"
+}
