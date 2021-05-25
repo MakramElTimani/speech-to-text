@@ -9,6 +9,7 @@
     "@google-cloud/speech": "^4.5.1",
     "binaryjs": "latest",
     "express": "latest",
+    "http": "0.0.1-security",
     "jade": "latest",
     "wav": "latest"
   },
