@@ -65,7 +65,7 @@ binaryServer.on('connection', function(client) {
     // stream.pipe(fileWriter);
 
     stream.on('end', function() {
-      // fileWriter.end();
+      fileWriter.end();
       // console.log('wrote to file ' + outFile);
     });
   });
