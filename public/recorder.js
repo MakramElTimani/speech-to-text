@@ -1,5 +1,5 @@
 (function(window) {
-  var client = new BinaryClient('ws://localhost:9001');
+  var client = new BinaryClient('wss://speechtotext.onrender.com');
 
   client.on('open', function() {
     window.Stream = client.createStream();

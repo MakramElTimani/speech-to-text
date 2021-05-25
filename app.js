@@ -43,10 +43,10 @@ const recognizeStream = client
   .on('error', console.error)
   .on('data', data => {
     if (data.results && data.results[0]) {
-      // console.log(data.results[0]);
-      if(data.results[0].isFinal){
-        console.log(data.results[0].alternatives[0].transcript)
-      }
+      console.log(data.results[0]);
+      // if(data.results[0].isFinal){
+      //   console.log(data.results[0].alternatives[0].transcript)
+      // }
     }
 });
 
@@ -62,7 +62,7 @@ binaryServer.on('connection', function(client) {
   client.on('stream', function(stream, meta) {
     console.log('new stream');
     stream.pipe(recognizeStream);
-    stream.pipe(fileWriter);
+    // stream.pipe(fileWriter);
 
     stream.on('end', function() {
       fileWriter.end();
