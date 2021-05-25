@@ -1,6 +1,6 @@
 (function(window) {
-  var client = new BinaryClient('wss://speechtotext.onrender.com');
-  // var client = new BinaryClient('ws://localhost:9000');
+  // var client = new BinaryClient('wss://speechtotext.onrender.com');
+  var client = new BinaryClient('ws://localhost:9000');
 
   client.on('open', function() {
     window.Stream = client.createStream();
@@ -18,6 +18,7 @@
     var recording = false;
 
     window.startRecording = function() {
+      document.getElementById('text').innerHTML = "";
       recording = true;
     }
 
@@ -58,8 +59,11 @@
     }
   });
 
-  client.on('end', function(message){
-    console.log(message);
+  client.on('stream', function(stream){
+    console.log(stream);
+    stream.on('data', function(data){
+      document.getElementById('text').innerHTML += data + "<br/>";
+    })
     // document.getElementById('text').innerHTML = message;
   })
 })(this);

@@ -36,34 +36,30 @@ const request = {
   verbose: true,
 };
 
-const client = new Speech.SpeechClient({keyFilename: 'cred.json'});
+const speechClient = new Speech.SpeechClient({keyFilename: 'cred.json'});
 
 let textRecognized = '';
 
-const recognizeStream = client
+
+//let textWriter = fs.createWriteStream('demo.txt');
+
+let clients = {};
+
+binaryServer.on('connection', function(client) {
+  console.log('new connection ' + client.id);
+
+  const recognizeStream = speechClient
   .streamingRecognize(request)
   .on('error', console.error)
   .on('data', data => {
     if (data.results && data.results[0]) {
       //console.log(data.results[0]);
       if(data.results[0].isFinal){
-        console.log(data.results[0].alternatives[0].transcript)
-        textWriter.write(data.results[0].alternatives[0].transcript + '\n')
-        // textRecognized += data.results[0].alternatives[0].transcript + '\n';
+        console.log(data.results[0].alternatives[0].transcript);
+        client.send(data.results[0].alternatives[0].transcript);
       }
     }
-});
-
-let textWriter = fs.createWriteStream('demo.txt');
-
-binaryServer.on('connection', function(client) {
-  console.log('new connection');
-
-  // var fileWriter = new wav.FileWriter(outFile, {
-  //   channels: 1,
-  //   sampleRate: 48000,
-  //   bitDepth: 16
-  // });
+  });
 
   client.on('stream', function(stream, meta) {
     console.log('new stream');
@@ -74,11 +70,12 @@ binaryServer.on('connection', function(client) {
       //fileWriter.end();
       // console.log('wrote to file ' + outFile);
       // client.emit('message', textRecognized)
-      textWriter.end();
-      const textReader = fs.createReadStream('demo.txt');
-      client.send(textReader);
+      // textWriter.end();
+      client.send('Recording Ended');
     });
   });
+
+  // clients[client.id] = client;
 });
 
 
